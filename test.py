@@ -10,7 +10,7 @@ items = {
     2: {"id": "1", "title": "EWQ", "description": "ABC", "category": "A", "price": 10 , "discount": 1 , "quantity": "A"} 
 
 }
-#items = {}
+inventory = []
 # Модель данных для товара
 class Item(BaseModel):
     id: int
@@ -112,6 +112,3 @@ def increment_items(id: List[int], quantity: List[int]):
         if not item_found:
             raise HTTPException(status_code=404, detail="Item not found")
     return updated_items
-# Пример запуска приложения
-#import uvicorn
-#uvicorn.run(app, host="127.0.0.1", port=8000)
